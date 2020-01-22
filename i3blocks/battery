@@ -8,21 +8,19 @@ BATTERY_ICON=0
 
 URGENT_VALUE=10
 
-if [[ "${BATTERY_POWER}" -le 100 ]]; then
-  BATTERY_ICON=""
-fi
-if [[ "${BATTERY_POWER}" -le 75 ]]; then
-  BATTERY_ICON=""
-fi
-if [[ "${BATTERY_POWER}" -le 50 ]]; then
-  BATTERY_ICON=""
-fi
-if [[ "${BATTERY_POWER}" -le 25 ]]; then
-  BATTERY_ICON=""
-fi
 if [[ "${BATTERY_POWER}" -le "${URGENT_VALUE}" ]]; then
   BATTERY_ICON=""
+elif [[ "${BATTERY_POWER}" -le 25 ]]; then
+  BATTERY_ICON=""
+elif [[ "${BATTERY_POWER}" -le 50 ]]; then
+  BATTERY_ICON=""
+elif [[ "${BATTERY_POWER}" -le 75 ]]; then
+  BATTERY_ICON=""
+else
+  BATTERY_ICON=""
 fi
+
+
 
 
 if [[ "${BATTERY_STATE}" = "Charging" ]]; then
