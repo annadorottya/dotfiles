@@ -20,6 +20,6 @@ i3blocks scripts:
 - [disk](https://github.com/vivien/i3blocks-contrib/tree/master/disk)
 - [ssid](https://github.com/Anachron/i3blocks/blob/master/blocks/ssid)
 - [volume-pulseaudio](https://github.com/vivien/i3blocks-contrib/tree/master/volume-pulseaudio): changed colors
-- [weather](https://github.com/Anachron/i3blocks/blob/master/blocks/weather): changed icons, removed -0℃, added feels like temperature
+- [weather](https://github.com/Anachron/i3blocks/blob/master/blocks/weather): changed icons to match API icons, removed -0℃, added feels like temperature
 
 ![alt text](https://raw.githubusercontent.com/annadorottya/dotfiles/master/screenshot.png "Screenshot")
