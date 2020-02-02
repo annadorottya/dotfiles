@@ -248,8 +248,9 @@ gaps outer -2
 smart_gaps on
 
 # startup stuff
-exec_always --no-startup-id feh --bg-fill /usr/share/backgrounds/5acf7dda30014966581964_hardlight.png
+exec_always --no-startup-id feh --bg-fill /usr/share/backgrounds/blade-runner-2049-9-1920×1080.jpg
 exec --no-startup-id picom -f
 exec --no-startup-id redshift-gtk
-exec --no-startup-id synclient VertScrollDelta=-77 HorizScrollDelta=-77 TapButton3=2 TapButton2=3 HorizTwoFingerScroll=1
+exec --no-startup-id synclient VertScrollDelta=-77 HorizScrollDelta=-77 TapButton3=3 TapButton2=2 ClickFinger2=2 ClickFinger3=3 HorizTwoFingerScroll=1
 exec google-chrome-stable
+exec --no-startup-id xfce4-clipman
