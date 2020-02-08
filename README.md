@@ -2,8 +2,8 @@
 
 It would be a shame if my touchpad settings would get lost.
 
-Wallpaper1: [Miyavi concert, 2017 Budapest, A38](https://www.a38.hu/storage/app/uploads/public/5ac/f7d/da3/5acf7dda30014966581964.jpg) (modified to fit better with gruvbox)  
-Wallpaper1: [Screenshot from Blade Runner 2049](https://www.reddit.com/r/wallpapers/comments/b06prs/blade_runner_2049/)  
+Wallpaper 1: [Miyavi concert, 2017 Budapest, A38](https://www.a38.hu/storage/app/uploads/public/5ac/f7d/da3/5acf7dda30014966581964.jpg) (modified to fit better with gruvbox)  
+Wallpaper 2: [Screenshot from Blade Runner 2049](https://www.reddit.com/r/wallpapers/comments/b06prs/blade_runner_2049/)  
 Color scheme: [Gruvbox](https://github.com/morhetz/gruvbox)  
 Xfce4-terminal theme: [gruvbox-dark-hard](https://github.com/morhetz/gruvbox-contrib/blob/master/xfce4-terminal/gruvbox-dark-hard.theme)  
 GTK Theme: [oomox-Gruvbox](https://github.com/enindu/dotfiles/tree/master/gruvbox/home/enindu/.themes/oomox-Gruvbox)  
