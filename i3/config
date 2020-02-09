@@ -51,6 +51,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 && pkill -RTMIN+2 i3blocks 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec ~/.config/toggletouchpad.sh
 
+# HDMI activation control - for some reason xev maps this key to p, so $mod+F8 instead of fn+F8
+bindsym $mod+F8 exec ~/.config/hdmi.sh
+
 # Screenshot
 bindsym Print exec xfce4-screenshooter -f
 bindsym $mod+Print exec xfce4-screenshooter -w
@@ -124,14 +127,14 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: "
-set $ws2 "2: "
-set $ws3 "3: "
+set $ws2 "2: "
+set $ws3 "3: "
 set $ws4 "4: "
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
+set $ws5 "5: "
+set $ws6 "6: "
+set $ws7 "7: "
+set $ws8 "8: "
+set $ws9 "9: "
 set $ws10 "10: "
 
 # switch to workspace
@@ -162,11 +165,15 @@ bindsym $mod+Shift+odiaeresis move container to workspace number $ws10
 bindsym Control+Mod1+Left workspace prev
 bindsym Control+Mod1+Right workspace next
 
+# move focused container to adjacent workspaces
+bindsym Control+Shift+Mod1+Left move container to workspace prev
+bindsym Control+Shift+Mod1+Right move container to workspace next
+
 
 # Open applications on specific workspaces
 assign [class="Google-chrome"] $ws1
-assign [class="Xfce4-terminal"] $ws2
-assign [class="Signal"] $ws3
+assign [class="Signal"] $ws2
+assign [class="Xfce4-terminal"] $ws3
 assign [class="Thunar"] $ws4
 assign [class="vlc"] $ws10
 
@@ -237,13 +244,13 @@ bar {
 		#                  border             background         text
 		focused_workspace  $bg                $bg                $fg
 		inactive_workspace $bg                $bg                $gray
-		urgent_workspace   $green               $green               $fg
+		urgent_workspace   $green             $green             $fg
 	}
 }
 
 # You can also use any non-zero value if you'd like to have a border
 for_window [class=".*"] border pixel 0
-gaps inner 14
+gaps inner 24
 gaps outer -2
 
 # Smart gaps (gaps used if only more than one container on the workspace)
