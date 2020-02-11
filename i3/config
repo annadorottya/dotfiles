@@ -54,6 +54,9 @@ bindsym XF86TouchpadToggle exec ~/.config/toggletouchpad.sh
 # HDMI activation control - for some reason xev maps this key to p, so $mod+F8 instead of fn+F8
 bindsym $mod+F8 exec ~/.config/hdmi.sh
 
+# IBus switcher
+bindsym $mod+i exec ~/.config/ibus.sh && pkill -RTMIN+3 i3blocks
+
 # Screenshot
 bindsym Print exec xfce4-screenshooter -f
 bindsym $mod+Print exec xfce4-screenshooter -w
@@ -263,4 +266,5 @@ exec --no-startup-id redshift-gtk
 exec --no-startup-id synclient VertScrollDelta=-77 HorizScrollDelta=-77 TapButton3=3 TapButton2=2 ClickFinger2=2 ClickFinger3=3 HorizTwoFingerScroll=1
 exec google-chrome-stable
 exec signal-desktop
+exec --no-startup-id ibus-daemon -drx
 exec --no-startup-id xfce4-clipman

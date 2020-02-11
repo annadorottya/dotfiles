@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Left click
+if [[ "${BLOCK_BUTTON}" -eq 1 ]]; then
+  	if ibus engine | grep -q hu; then
+  		#switch to japanese
+		ibus engine mozc-jp
+	elif ibus engine | grep -q jp; then
+		#switch to hungarian
+		ibus engine xkb:hu::hun
+	fi
+fi
+
+if ibus engine | grep -q hu; then
+	echo HU
+elif ibus engine | grep -q jp; then
+	echo JP
+fi

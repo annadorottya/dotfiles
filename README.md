@@ -13,6 +13,7 @@ i3blocks scripts:
 - [battery](https://github.com/Anachron/i3blocks/blob/master/blocks/battery): modified to show changing icon
 - [brightness](https://github.com/Anachron/i3blocks/blob/master/blocks/brightness)
 - [disk](https://github.com/vivien/i3blocks-contrib/tree/master/disk)
+- ibus engine switcher: my own, switches between Hungarian and Japanese (mozc) inputs on click (and shows the current input mode) 
 - [ssid](https://github.com/Anachron/i3blocks/blob/master/blocks/ssid)
 - [volume-pulseaudio](https://github.com/vivien/i3blocks-contrib/tree/master/volume-pulseaudio): changed colors
 - [weather](https://github.com/Anachron/i3blocks/blob/master/blocks/weather): changed icons to match API icons, removed -0℃, added feels like temperature
