@@ -18,4 +18,3 @@ rofi.color-normal: argb:031d1f21, #fbf1c7, argb:031d1f21, argb:031d1f21, #98971a
 rofi.color-urgent: argb:031d1f21, #fbf1c7, argb:031d1f21, argb:031d1f21, #98971a
 rofi.color-active: argb:031d1f21, #fbf1c7, argb:031d1f21, argb:031d1f21, #98971a 
 rofi.font: Noto Sans Regular 13
-

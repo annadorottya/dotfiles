@@ -72,7 +72,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start rofi
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec rofi -show drun -theme window
 
 # start thunar
 bindsym $mod+t exec thunar
