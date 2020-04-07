@@ -13,6 +13,7 @@ set $mod Mod4
 
 # gruvbox colors
 set $bg #282828
+set $bg0_h #1d2021
 set $red #cc241d
 set $green #98971a
 set $yellow #d79921
@@ -169,7 +170,7 @@ bindsym Control+Mod1+Left workspace prev
 bindsym Control+Mod1+Right workspace next
 
 # move focused container to adjacent workspaces
-bindsym Control+Shift+Mod1+Left move container to workspace prev
+bindsym Contrkurva technika, huu de utalomol+Shift+Mod1+Left move container to workspace prev
 bindsym Control+Shift+Mod1+Right move container to workspace next
 
 
@@ -253,6 +254,16 @@ bar {
 		urgent_workspace   $green             $green             $fg
 	}
 }
+
+# class                 border  backgr. text    indicator child_border
+client.focused          $bg0_h	$bg	$fg	$red	$bg
+client.focused_inactive $bg0_h	$bg	$gray	$red	$bg
+client.unfocused        $bg0_h	$bg	$gray	$red	$bg
+client.urgent           $bg0_h	$green	$fg	$red	$bg
+client.placeholder      $bg0_h	$bg	$fg	$red	$bg
+
+client.background       $bg
+
 
 # You can also use any non-zero value if you'd like to have a border
 for_window [class=".*"] border pixel 0
