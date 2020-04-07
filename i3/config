@@ -23,6 +23,7 @@ set $aqua #689d68
 set $gray #a89984
 set $darkgray #1d2021
 set $fg #ebdbb2
+set $orange #d65d0e
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
