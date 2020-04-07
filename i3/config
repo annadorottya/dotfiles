@@ -170,7 +170,7 @@ bindsym Control+Mod1+Left workspace prev
 bindsym Control+Mod1+Right workspace next
 
 # move focused container to adjacent workspaces
-bindsym Contrkurva technika, huu de utalomol+Shift+Mod1+Left move container to workspace prev
+bindsym Control+Shift+Mod1+Left move container to workspace prev
 bindsym Control+Shift+Mod1+Right move container to workspace next
 
 
