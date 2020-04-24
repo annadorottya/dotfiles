@@ -181,7 +181,7 @@ assign [class="Signal"] $ws2
 assign [class="Xfce4-terminal"] $ws3
 assign [class="Thunar"] $ws4
 assign [class="vlc"] $ws10
-assign [class="zim"] $ws9
+assign [class="Zim"] $ws9
 
 # workspace 10 opens on HDMI1 if applicable
 workspace $ws10 output HDMI1
@@ -279,7 +279,6 @@ exec --no-startup-id redshift-gtk
 exec --no-startup-id synclient VertScrollDelta=-77 HorizScrollDelta=-77 TapButton3=3 TapButton2=2 ClickFinger2=2 ClickFinger3=3 HorizTwoFingerScroll=1
 exec google-chrome-stable
 exec signal-desktop
-exec zim
 exec --no-startup-id ibus-daemon -drx
 exec_always --no-startup-id xfce4-clipman&
 exec --no-startup-id libinput-gestures-setup start
