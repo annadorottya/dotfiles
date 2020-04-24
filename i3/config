@@ -139,7 +139,7 @@ set $ws5 "5: "
 set $ws6 "6: "
 set $ws7 "7: "
 set $ws8 "8: "
-set $ws9 "9: "
+set $ws9 "9: "
 set $ws10 "10: "
 
 # switch to workspace
@@ -181,6 +181,7 @@ assign [class="Signal"] $ws2
 assign [class="Xfce4-terminal"] $ws3
 assign [class="Thunar"] $ws4
 assign [class="vlc"] $ws10
+assign [class="zim"] $ws9
 
 # workspace 10 opens on HDMI1 if applicable
 workspace $ws10 output HDMI1
@@ -189,8 +190,6 @@ workspace $ws10 output HDMI1
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # i3lock
 bindsym $mod+Shift+x exec betterlockscreen -l blur
@@ -214,6 +213,7 @@ mode "$mode_system" {
 }
 
 # resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -238,10 +238,7 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# Start i3bar to display a workspace bar
 bar {
         status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
 	position top
@@ -282,6 +279,7 @@ exec --no-startup-id redshift-gtk
 exec --no-startup-id synclient VertScrollDelta=-77 HorizScrollDelta=-77 TapButton3=3 TapButton2=2 ClickFinger2=2 ClickFinger3=3 HorizTwoFingerScroll=1
 exec google-chrome-stable
 exec signal-desktop
+exec zim
 exec --no-startup-id ibus-daemon -drx
 exec_always --no-startup-id xfce4-clipman&
 exec --no-startup-id libinput-gestures-setup start
