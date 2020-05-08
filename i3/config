@@ -196,7 +196,7 @@ bindsym $mod+Shift+x exec betterlockscreen -l blur
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
-set $mode_system  (l)ock,  (e)xit,  switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+set $mode_system 󰌾 (l)ock 󰍃 (e)xit 󰀄 switch (u)ser 󰏦 (s)uspend 󰽧 (h)ibernate 󰜉 (r)eboot 󰐥 (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id betterlockscreen -l blur, mode "default"
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
@@ -282,3 +282,4 @@ exec signal-desktop
 exec --no-startup-id ibus-daemon -drx
 exec_always --no-startup-id xfce4-clipman&
 exec --no-startup-id libinput-gestures-setup start
+exec --no-startup-id xbindkeys
