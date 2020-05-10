@@ -1,0 +1,30 @@
+#!/bin/bash
+
+API_KEY="<your API2 key>"
+
+URL="https://api.wanikani.com/v2/"
+
+REVIEWS=$(curl -s "${URL}summary" -H "Authorization: Bearer ${API_KEY}" | grep -oP '(?<=reviews\":\[{\"available_at\":\"[0-9TZ:.-]{27}\",\"subject_ids\":\[)[0-9,]*(?=\])')
+
+IFS=',' read -r -a ARRAY <<< "$REVIEWS"
+
+#1-439, 8761-8799, 8819-8833, 8856-8857: radical 部首
+#440-2466, 8834-8840, 8858-8864, 8880-8886: kanji 漢字
+#2467-8760, 8800-8818, 8841-8855, 8865-8879, 8887-8905: vocab 単語
+
+RADICAL=0
+KANJI=0
+VOCAB=0
+
+for ELEMENT in "${ARRAY[@]}"
+do
+  if [[ "${ELEMENT}" -le 439 ]] || [[ "${ELEMENT}" -ge 8761 && "${ELEMENT}" -le 8799 ]] || [[ "${ELEMENT}" -ge 8819 && "${ELEMENT}" -le 8833 ]] || [[ "${ELEMENT}" -ge 8856 && "${ELEMENT}" -le 8857 ]]; then
+    RADICAL=$(( $RADICAL + 1 ))
+  elif [[ "${ELEMENT}" -ge 440 && "${ELEMENT}" -le 2466 ]] || [[ "${ELEMENT}" -ge 8834 && "${ELEMENT}" -le 8840 ]] || [[ "${ELEMENT}" -ge 8858 && "${ELEMENT}" -le 8864 ]] || [[ "${ELEMENT}" -ge 8880 && "${ELEMENT}" -le 8886 ]]; then
+    KANJI=$(( $KANJI + 1 ))
+  else
+    VOCAB=$(( $VOCAB + 1 ))
+  fi
+done
+
+echo "R ${RADICAL} K ${KANJI} V ${VOCAB}"
