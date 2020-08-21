@@ -18,4 +18,10 @@ i3blocks scripts:
 - [volume-pulseaudio](https://github.com/vivien/i3blocks-contrib/tree/master/volume-pulseaudio): changed colors
 - [weather](https://github.com/Anachron/i3blocks/blob/master/blocks/weather): changed icons to match API icons, removed -0℃, added feels like temperature
 
-![alt text](https://raw.githubusercontent.com/annadorottya/dotfiles/master/screenshot.png "Screenshot")
+## Screenshots
+
+![alt text](https://raw.githubusercontent.com/annadorottya/dotfiles/master/screenshot.png "Slightly outdated screenshot")
+![alt text](https://raw.githubusercontent.com/annadorottya/dotfiles/master/rofi_power.png "Rofi power menu")
+![alt text](https://raw.githubusercontent.com/annadorottya/dotfiles/master/rofi_terminator.png "Rofi terminator")
+![alt text](https://raw.githubusercontent.com/annadorottya/dotfiles/master/rofi_apps.png "Rofi app menu")
+![alt text](https://raw.githubusercontent.com/annadorottya/dotfiles/master/dunst.png "Dunst notification")

@@ -24,13 +24,13 @@ configuration {
 }
 
 * {
-    background:		#282828ff;
-    background-alt:	#282828ff;
-    background-ib:	#3c3836ff;
-    foreground:		#ebdbb2ff;
+    background:     #28282888;
+    transparent:    #00000000;
+    background-ib:  #ebdbb222;
+    foreground:     #ebdbb2ff;
     border:		#504945ff;
     border-sel:         #ebdbb2ff;
-    selected:           #98971aff;
+    selected:           #98971add;
     urgent:             #d79921ff;
 }
 
@@ -64,7 +64,7 @@ inputbar {
 }
 
 entry {
-    background-color:               @background-ib;
+    background-color:               @transparent;
     text-color:                     @foreground;
     placeholder-color:              @foreground;
     expand:                         true;
@@ -75,14 +75,14 @@ entry {
 }
 
 case-indicator {
-    background-color:               @background-ib;
+    background-color:               @transparent;
     text-color:                     @foreground;
     spacing:                        0;
 }
 
 
 listview {
-    background-color:               @background;
+    background-color:               @transparent;
     columns:                        4;
     spacing:                        4px;
     cycle:                          false;
@@ -98,7 +98,7 @@ mainbox {
 }
 
 element {
-    background-color:               @background;
+    background-color:               @transparent;
     text-color:                     @foreground;
     orientation:                    vertical;
     margin:                         5px;
@@ -125,7 +125,7 @@ element alternate.urgent {
 
 element normal.active,
 element alternate.active {
-    background-color:               @background-alt;
+    background-color:               @transparent;
     text-color:                     @foreground;
 }
 
@@ -140,6 +140,6 @@ element selected.urgent {
 }
 
 element selected.active {
-    background-color:               @background-alt;
+    background-color:               @transparent;
     color:                          @foreground;
 }

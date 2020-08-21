@@ -96,6 +96,7 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias zshc="vim ~/.zshrc"
+alias scr="~/.config/screenshot.sh && xfce4-screenshooter"
 alias sp="sudo pacman"
 alias pls='sudo $(fc -ln -1)'
 alias i3c="vim ~/.config/i3/config"

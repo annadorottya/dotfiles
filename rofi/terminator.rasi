@@ -23,13 +23,13 @@ configuration {
 }
 
 * {
-    background:		#282828ff;
-    background-alt:	#282828ff;
-    background-ib:	#3c3836ff;
+    background:		#28282888;
+    transparent:    #00000000;
+    background-ib:	#ebdbb222;
     foreground:		#ebdbb2ff;
     border:		#504945ff;
     border-sel:         #ebdbb2ff;
-    selected:           #cc241d;
+    selected:           #cc241dff;
     urgent:             #d79921ff;
 }
 
@@ -63,7 +63,7 @@ inputbar {
 }
 
 entry {
-    background-color:               @background-ib;
+    background-color:               @transparent;
     text-color:                     @foreground;
     placeholder-color:              @foreground;
     expand:                         true;
@@ -74,14 +74,14 @@ entry {
 }
 
 case-indicator {
-    background-color:               @background-ib;
+    background-color:               @transparent;
     text-color:                     @foreground;
     spacing:                        0;
 }
 
 
 listview {
-    background-color:               @background;
+    background-color:               @transparent;
     columns:                        1;
     spacing:                        2px;
     cycle:                          false;
@@ -97,7 +97,7 @@ mainbox {
 }
 
 element {
-    background-color:               @background;
+    background-color:               @transparent;
     text-color:                     @foreground;
     orientation:                    vertical;
     margin:                         2px 20px 2px 20px;
@@ -124,12 +124,12 @@ element alternate.urgent {
 
 element normal.active,
 element alternate.active {
-    background-color:               @background-alt;
+    background-color:               @transparent;
     text-color:                     @foreground;
 }
 
 element selected {
-    background-color:               @background-alt;
+    background-color:               @transparent;
     text-color:                     @foreground;
     border:                         0px 0px 3px 0px;
     border-color:                   @selected;
@@ -141,6 +141,6 @@ element selected.urgent {
 }
 
 element selected.active {
-    background-color:               @background-alt;
+    background-color:               @transparent;
     color:                          @foreground;
 }
