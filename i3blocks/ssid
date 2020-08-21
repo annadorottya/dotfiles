@@ -1,14 +1,30 @@
 #!/bin/bash
 
-SSID_NAME=$(iwgetid -r)
+SSID_NAME=$(nmcli con show --active | grep wifi | awk '{print $1}')
+
+DEFAULT_COLOR=${DEFAULT_COLOR:-"#ebdbb2"}
+MUTED_COLOR=${MUTED_COLOR:-"#a89984"}
+
 
 # You can put any urgent name so the block will give warning
 # if a network with this name is used, like public wifi or alike.
 # You can separate multiple values with \|
 URGENT_VALUE=""
 
+case $BLOCK_BUTTON in
+	1) $HOME/.config/rofi/nmcli-rofi ;; # left click
+	2)  ;; # middle click 
+	3)  ;; # right click
+esac
+
 if [[ "${SSID_NAME}" != "" ]]; then
-  echo "${SSID_NAME}"
+  echo " ${SSID_NAME}"
+  echo " ${SSID_NAME}"
+  echo "$DEFAULT_COLOR"
+else
+  echo " no connection"
+  echo " no connection"
+  echo "$MUTED_COLOR"
 
   if [[ "${URGENT_VALUE}" != "" ]] && [[ $(echo "${SSID_NAME}" | grep -we "${URGENT_VALUE}") != "" ]]; then
     exit 33

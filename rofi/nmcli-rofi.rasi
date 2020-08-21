@@ -1,0 +1,154 @@
+/*
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Mail : adi1090x@gmail.com
+ * Github : @adi1090x
+ * Reddit : @adi1090x
+ *
+ */
+
+configuration {
+    font:	"Noto Sans Mono 10";
+    threads:	0;
+    scroll-method:	0;
+    disable-history:	false;
+    fullscreen:	false;
+    hide-scrollbar:	true;
+    sidebar-mode:	false;
+    eh:		1;
+}
+
+* {
+    background:		#28282888;
+    transparent:    #00000000;
+    background-ib:	#ebdbb222;
+    foreground:		#ebdbb2ff;
+    border:		#504945ff;
+    border-sel:         #ebdbb2ff;
+    selected:           #689d68ff;
+    urgent:             #d79921ff;
+}
+
+window {
+    transparency:	"real";
+    background-color:	@background;
+    text-color:		@foreground;
+    border:		0px;
+    height:		100%;
+    width:		400px;
+    location:		north east;
+    anchor:		north east;
+    x-offset:		0;
+    y-offset:		25;
+}
+
+prompt {
+    enabled: 			false;
+}
+
+message {
+    background-color:               @transparent;
+    orientation:                    vertical;
+    margin:                         2px 20px 2px 20px;
+    padding:                        0px 0px 3px 0px;
+}
+
+textbox {
+    background-color:               inherit;
+    text-color:                     @foreground;
+    horizontal-align:               0.5;
+}
+
+inputbar {
+    background-color:	@background-ib;
+    text-color:		@foreground;
+    expand:		false;
+    border:		1px;
+    border-color:	@border;
+    margin:         2px 20px 2px 20px;
+    padding:		3px;
+    position:		center;
+}
+
+entry {
+    background-color:               @transparent;
+    text-color:                     @foreground;
+    placeholder-color:              @foreground;
+    expand:                         true;
+    horizontal-align:               0.5;
+    padding:                        3px;
+    placeholder:                    "";
+    blink:                          true;
+}
+
+case-indicator {
+    background-color:               @transparent;
+    text-color:                     @foreground;
+    spacing:                        0;
+}
+
+
+listview {
+    background-color:               @transparent;
+    columns:                        1;
+    spacing:                        2px;
+    cycle:                          false;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+mainbox {
+    background-color:               @background;
+    children:                       [ message, inputbar, listview ];
+    spacing:                       	3px;
+    padding:                        10px 3px 3px 3px;
+}
+
+element {
+    background-color:               @transparent;
+    text-color:                     @foreground;
+    orientation:                    vertical;
+    margin:                         2px 20px 2px 20px;
+    padding:                        0px 0px 3px 0px;
+}
+
+element-icon {
+    size:                           164px;
+    border:                         0px;
+}
+
+element-text {
+    expand:                         true;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    margin:                         0px;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    background-color:               @urgent;
+    text-color:                     @foreground;
+}
+
+element normal.active,
+element alternate.active {
+    background-color:               @transparent;
+    text-color:                     @foreground;
+}
+
+element selected {
+    background-color:               @transparent;
+    text-color:                     @foreground;
+    border:                         0px 0px 3px 0px;
+    border-color:                   @selected;
+}
+
+element selected.urgent {
+    background-color:               @urgent;
+    text-color:                     @foreground;
+}
+
+element selected.active {
+    background-color:               @transparent;
+    color:                          @foreground;
+}
