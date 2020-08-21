@@ -60,9 +60,9 @@ bindsym $mod+F8 exec ~/.config/hdmi.sh
 bindsym $mod+i exec ~/.config/ibus.sh && pkill -RTMIN+3 i3blocks
 
 # Screenshot
-bindsym Print exec xfce4-screenshooter -f
-bindsym $mod+Print exec xfce4-screenshooter -w
-bindsym $mod+Shift+Print exec xfce4-screenshooter -r
+bindsym Print exec ~/.config/screenshot.sh && xfce4-screenshooter -f
+bindsym $mod+Print exec ~/.config/screenshot.sh && xfce4-screenshooter -w
+bindsym $mod+Shift+Print exec ~/.config/screenshot.sh && xfce4-screenshooter -r
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -75,36 +75,27 @@ bindsym $mod+Shift+q kill
 
 # start rofi
 bindsym $mod+d exec rofi -show drun -theme window
+bindsym $mod+0 exec rofi -show Power -modi Power:$HOME/.config/rofi/power.sh -theme menu
+bindsym $mod+k exec rofi -show Kill -modi Kill:$HOME/.config/rofi/terminator.sh -theme terminator
+bindsym $mod+n exec $HOME/.config/rofi/nmcli-rofi
 
 # start thunar
 bindsym $mod+t exec thunar
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+g split h
+bindsym $mod+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -194,24 +185,6 @@ bindsym $mod+Shift+r restart
 # i3lock
 bindsym $mod+Shift+x exec betterlockscreen -l blur
 
-# Set shut down, restart and locking features
-bindsym $mod+0 mode "$mode_system"
-set $mode_system 󰌾 (l)ock 󰍃 (e)xit 󰀄 switch (u)ser 󰏦 (s)uspend 󰽧 (h)ibernate 󰜉 (r)eboot 󰐥 (Shift+s)hutdown
-mode "$mode_system" {
-    bindsym l exec --no-startup-id betterlockscreen -l blur, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-    bindsym $mod+0 mode "default"
-}
-
 # resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
 mode "resize" {
@@ -280,6 +253,5 @@ exec --no-startup-id synclient VertScrollDelta=-77 HorizScrollDelta=-77 TapButto
 exec google-chrome-stable
 exec signal-desktop
 exec --no-startup-id ibus-daemon -drx
-exec_always --no-startup-id xfce4-clipman&
 exec --no-startup-id libinput-gestures-setup start
 exec --no-startup-id xbindkeys

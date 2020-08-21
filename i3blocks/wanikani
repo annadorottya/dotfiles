@@ -1,6 +1,6 @@
 #!/bin/bash
 
-API_KEY="<your API2 key>"
+API_KEY="3988a738-5c1d-409a-90fa-3f928d94a6ef"
 
 URL="https://api.wanikani.com/v2/"
 
