@@ -19,6 +19,7 @@ i3blocks scripts:
 - [volume-pulseaudio](https://github.com/vivien/i3blocks-contrib/tree/master/volume-pulseaudio): changed colors
 - [weather](https://github.com/Anachron/i3blocks/blob/master/blocks/weather): changed icons to match API icons, removed -0℃, added feels like temperature
 - wanikani: my own, shows current review number
+
 Rofi modules:
 - [nmcli-rofi](https://github.com/sinetoami/nmcli-rofi): changed theme + added signal
 - [kill](https://github.com/LionessAlana/dotfiles/blob/0302570dc841e27cf1d49d0bdb9849eb5a78d703/Lioness/rofi/kill.sh)
