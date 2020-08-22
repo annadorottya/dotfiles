@@ -25,6 +25,7 @@ Rofi modules:
 - [nmcli-rofi](https://github.com/sinetoami/nmcli-rofi): changed theme + added signal
 - [kill](https://github.com/LionessAlana/dotfiles/blob/0302570dc841e27cf1d49d0bdb9849eb5a78d703/Lioness/rofi/kill.sh)
 - [power menu](https://github.com/LionessAlana/dotfiles/blob/0302570dc841e27cf1d49d0bdb9849eb5a78d703/Lioness/rofi/power.sh): added more options, changed icons
+- [finder](https://github.com/davatorium/rofi-scripts/blob/master/rofi-finder/finder.sh)
 
 ## Screenshots
 
