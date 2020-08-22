@@ -2,6 +2,6 @@
 
 CAL=$(cal)
 
-[[ -z "${BLOCK_BUTTON}" ]] || notify-send -a 'calendar' -i calendar " " "${CAL}"
+[[ -z "${BLOCK_BUTTON}" ]] || notify-send -a 'calendar' -i calendar "Calendar" "${CAL}"
 
 date '+%a %m %d'

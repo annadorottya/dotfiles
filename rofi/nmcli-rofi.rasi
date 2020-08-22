@@ -60,6 +60,7 @@ textbox {
 }
 
 inputbar {
+    children: [ entry ];
     background-color:	@background-ib;
     text-color:		@foreground;
     expand:		false;
@@ -73,20 +74,11 @@ inputbar {
 entry {
     background-color:               @transparent;
     text-color:                     @foreground;
-    placeholder-color:              @foreground;
     expand:                         true;
     horizontal-align:               0.5;
     padding:                        3px;
-    placeholder:                    "";
     blink:                          true;
 }
-
-case-indicator {
-    background-color:               @transparent;
-    text-color:                     @foreground;
-    spacing:                        0;
-}
-
 
 listview {
     background-color:               @transparent;
@@ -101,7 +93,7 @@ mainbox {
     background-color:               @background;
     children:                       [ message, inputbar, listview ];
     spacing:                       	3px;
-    padding:                        10px 3px 3px 3px;
+    padding:                        30px 3px 3px 3px;
 }
 
 element {

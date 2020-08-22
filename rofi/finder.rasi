@@ -23,13 +23,13 @@ configuration {
 }
 
 * {
-    background:     #28282888;
+    background:		#28282888;
     transparent:    #00000000;
-    background-ib:	#3c3836ff;
+    background-ib:	#ebdbb222;
     foreground:		#ebdbb2ff;
     border:		#504945ff;
     border-sel:         #ebdbb2ff;
-    selected:           #458588ff;
+    selected:           #d79921ff;
     urgent:             #d79921ff;
 }
 
@@ -39,7 +39,7 @@ window {
     text-color:		@foreground;
     border:		0px;
     height:		100%;
-    width:		180px;
+    width:		40%;
     location:		north east;
     anchor:		north east;
     x-offset:		0;
@@ -50,19 +50,31 @@ prompt {
     enabled: 			false;
 }
 
+
+inputbar {
+    background-color:	@background-ib;
+    text-color:		@foreground;
+    expand:		false;
+    border:		1px;
+    border-color:	@border;
+    margin:         2px 20px 2px 20px;
+    padding:		3px;
+    position:		center;
+}
+
 entry {
-    background-color:               @background-ib;
+    background-color:               @transparent;
     text-color:                     @foreground;
     placeholder-color:              @foreground;
     expand:                         true;
     horizontal-align:               0.5;
     padding:                        3px;
-    placeholder:                    "Search Applications";
+    placeholder:                    "Process";
     blink:                          true;
 }
 
 case-indicator {
-    background-color:               @background-ib;
+    background-color:               @transparent;
     text-color:                     @foreground;
     spacing:                        0;
 }
@@ -79,9 +91,9 @@ listview {
 
 mainbox {
     background-color:               @background;
-    children:                       [ listview ];
+    children:                       [ inputbar, listview ];
     spacing:                       	3px;
-    padding:                        30px 3px 3px 3px;
+    padding:                        10px 3px 3px 3px;
 }
 
 element {

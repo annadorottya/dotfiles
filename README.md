@@ -7,6 +7,7 @@ Wallpaper 2: [Screenshot from Blade Runner 2049](https://www.reddit.com/r/wallpa
 Color scheme: [Gruvbox](https://github.com/morhetz/gruvbox)  
 Xfce4-terminal theme: [gruvbox-dark-hard](https://github.com/morhetz/gruvbox-contrib/blob/master/xfce4-terminal/gruvbox-dark-hard.theme)  
 GTK Theme: [oomox-Gruvbox](https://github.com/enindu/dotfiles/tree/master/gruvbox/home/enindu/.themes/oomox-Gruvbox)  
+Spotify Theme: [Gruvbox-Gold](https://github.com/morpheusthewhite/spicetify-themes/tree/master/Gruvbox-Gold)
 Sublime Text 3: [gruvbox](https://github.com/Briles/gruvbox)  
 Chrome theme: [chrome-gruvbox](https://github.com/bbrks/chrome-gruvbox)  
 i3blocks scripts:

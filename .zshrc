@@ -102,7 +102,7 @@ alias pls='sudo $(fc -ln -1)'
 alias i3c="vim ~/.config/i3/config"
 alias i3bc="vim ~/.config/i3blocks/i3blocks.conf"
 alias picomc='vim ~/.config/picom.conf'
-alias confbackup="cd ~/git/dotfiles && cp -R ~/.config/{i3/,picom.conf,libinput-gestures.conf,hdmi.sh,ibus.sh,screenshot.sh,toggletouchpad.sh,i3blocks/,rofi/,dunst/} . && cp ~/.config/xfce4/terminal/terminalrc xfce4/terminal/. && cp ~/{.zshrc,.xbindkeysrc} . && cp /etc/lightdm/{lightdm.conf,lightdm-mini-greeter.conf} lightdm/. && git status"
+alias confbackup="cd ~/git/dotfiles && cp -R ~/.config/{i3/,picom.conf,libinput-gestures.conf,betterlockscreenrc,hdmi.sh,ibus.sh,screenshot.sh,toggletouchpad.sh,i3blocks/,rofi/,dunst/} . && cp ~/.config/xfce4/terminal/terminalrc xfce4/terminal/. && cp ~/{.zshrc,.xbindkeysrc} . && cp /etc/lightdm/{lightdm.conf,lightdm-mini-greeter.conf} lightdm/. && git status"
 
 DEFAULT_USER=anna
 

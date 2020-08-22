@@ -77,6 +77,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show drun -theme window
 bindsym $mod+0 exec rofi -show Power -modi Power:$HOME/.config/rofi/power.sh -theme menu
 bindsym $mod+k exec rofi -show Kill -modi Kill:$HOME/.config/rofi/terminator.sh -theme terminator
+bindsym $mod+Shift+f exec rofi -show Finder -modi Finder:$HOME/.config/rofi/finder.sh -theme finder
 bindsym $mod+n exec $HOME/.config/rofi/nmcli-rofi
 
 # start thunar
@@ -129,8 +130,8 @@ set $ws4 "4: "
 set $ws5 "5: "
 set $ws6 "6: "
 set $ws7 "7: "
-set $ws8 "8: "
-set $ws9 "9: "
+set $ws8 "8: "
+set $ws9 "9: "
 set $ws10 "10: "
 
 # switch to workspace
@@ -171,8 +172,9 @@ assign [class="Google-chrome"] $ws1
 assign [class="Signal"] $ws2
 assign [class="Xfce4-terminal"] $ws3
 assign [class="Thunar"] $ws4
+assign [class="Zim"] $ws8
+for_window [class="Spotify"] move to workspace $ws9
 assign [class="vlc"] $ws10
-assign [class="Zim"] $ws9
 
 # workspace 10 opens on HDMI1 if applicable
 workspace $ws10 output HDMI1
@@ -252,6 +254,7 @@ exec --no-startup-id redshift-gtk
 exec --no-startup-id synclient VertScrollDelta=-77 HorizScrollDelta=-77 TapButton3=3 TapButton2=2 TapButton1=1 ClickFinger2=2 ClickFinger3=3 HorizTwoFingerScroll=1
 exec google-chrome-stable
 exec signal-desktop
+exec spotify
 exec --no-startup-id ibus-daemon -drx
 exec --no-startup-id libinput-gestures-setup start
 exec --no-startup-id xbindkeys
