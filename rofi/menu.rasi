@@ -23,7 +23,7 @@ configuration {
 }
 
 * {
-    background:     #28282888;
+    background:     #282828cc;
     transparent:    #00000000;
     background-ib:	#3c3836ff;
     foreground:		#ebdbb2ff;
@@ -78,7 +78,7 @@ listview {
 }
 
 mainbox {
-    background-color:               @background;
+    background-color:               @transparent;
     children:                       [ listview ];
     spacing:                       	3px;
     padding:                        30px 3px 3px 3px;

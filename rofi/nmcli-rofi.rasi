@@ -19,7 +19,7 @@ configuration {
 }
 
 * {
-    background:		#28282888;
+    background:		#282828cc;
     transparent:    #00000000;
     background-ib:	#ebdbb222;
     foreground:		#ebdbb2ff;
@@ -90,7 +90,7 @@ listview {
 }
 
 mainbox {
-    background-color:               @background;
+    background-color:               @transparent;
     children:                       [ message, inputbar, listview ];
     spacing:                       	3px;
     padding:                        30px 3px 3px 3px;
