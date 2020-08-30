@@ -13,6 +13,7 @@ Chrome theme: [chrome-gruvbox](https://github.com/bbrks/chrome-gruvbox)
 i3blocks scripts:
 - [battery](https://github.com/Anachron/i3blocks/blob/master/blocks/battery): modified to show changing icon
 - [brightness](https://github.com/Anachron/i3blocks/blob/master/blocks/brightness)
+- covid: shows the current COVID data of Hungary with changes from previous day + sends a notify with the full data if clicked on
 - date: sends a notify with the output of cal if clicked on
 - [disk](https://github.com/vivien/i3blocks-contrib/tree/master/disk)
 - ibus engine switcher: my own, switches between Hungarian and Japanese (mozc) inputs on click (and shows the current input mode) 
