@@ -1,0 +1,56 @@
+#!/bin/bash
+
+HISTFILE=~/.config/i3blocks/.koronablock
+
+calc_change () {
+   DF=$(($F- ${HIST[0]}))
+   DGy=$(($Gy- ${HIST[1]}))
+   DE=$(($E- ${HIST[2]}))
+   DSampl=$(($Sampl- ${HIST[3]}))
+
+   if [ $DF -gt -1 ]; then
+	   DF="+$DF"
+   fi
+
+   if [ $DGy -gt -1 ]; then
+	   DGy="+$DGy"
+   fi
+   if [ $DE -gt -1 ]; then
+	   DE="+$DE"
+   fi
+   if [ $DSampl -gt -1 ]; then
+	   DSampl="+$DSampl"
+   fi
+#  echo " $F ($DF)  $Gy ($DGy)  $E ($DE)  $Sampl ($DSampl)" 
+   echo " $F ($DF)  $DGy  $DE" 
+}
+
+KORMANY=$(curl "https://koronavirus.gov.hu" 2>/dev/null)
+
+Fpest=$(echo "$KORMANY" | grep 'api-fertozott-pest">' | cut -d '>' -f 2- | cut -d '<' -f 1| sed 's/ //g')
+Fvid=$(echo "$KORMANY" | grep 'api-fertozott-videk">' | cut -d '>' -f 2- | cut -d '<' -f 1 | sed 's/ //g')
+
+GYpest=$(echo "$KORMANY" | grep 'api-gyogyult-pest">' | cut -d '>' -f 2- | cut -d '<' -f 1 | sed 's/ //g')
+GYvid=$(echo "$KORMANY" | grep 'api-gyogyult-videk">' | cut -d '>' -f 2- | cut -d '<' -f 1 | sed 's/ //g')
+
+Epest=$(echo "$KORMANY" | grep 'api-elhunyt-pest">' | cut -d '>' -f 2- | cut -d '<' -f 1 | sed 's/ //g')
+Evid=$(echo "$KORMANY" | grep 'api-elhunyt-videk">' | cut -d '>' -f 2- | cut -d '<' -f 1 | sed 's/ //g')
+
+Sampl=$(echo "$KORMANY" | grep 'api-mintavetel">' | cut -d '>' -f 2- | cut -d '<' -f 1 | sed 's/ //g')
+
+F=$(($Fpest + $Fvid))
+Gy=$(($GYpest + $GYvid))
+E=$(($Epest + $Evid))
+
+HIST=( $(tail -1 $HISTFILE| awk '{print $1, $2, $3, $4}') )
+
+if [ "${HIST[0]}" -ne "$F" ] || [ "${HIST[1]}" -ne "$Gy" ] || 
+	[ "${HIST[2]}" -ne "$E" ] || [ "${HIST[3]}" -ne "$Sampl" ]; then
+   calc_change
+   echo "$F $Gy $E $Sampl" >> $HISTFILE 
+else
+   HIST=( $(tail -2 $HISTFILE | head -1 | awk '{print $1, $2, $3, $4}') ) 
+   calc_change
+fi
+
+[[ -z "${BLOCK_BUTTON}" ]] || notify-send -i gnome-info -a 'covid' "Koronamonitor" "Aktív: $F ($DF)\nGyógyult: $Gy ($DGy)\nElhunyt: $E ($DE)\nMinta: $Sampl ($DSampl)"

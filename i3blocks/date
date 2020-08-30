@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CAL=$(cal)
+CAL=$(cal -m)
 
 [[ -z "${BLOCK_BUTTON}" ]] || notify-send -a 'calendar' -i calendar "Calendar" "${CAL}"
 
