@@ -1,4 +1,5 @@
 #!/bin/bash
+# in collab with https://github.com/f-viktor
 
 HISTFILE=~/.config/i3blocks/.koronablock
 
@@ -25,7 +26,7 @@ calc_change () {
    echo " $F ($DF)  $DGy  $DE" 
 }
 
-KORMANY=$(curl "https://koronavirus.gov.hu" 2>/dev/null)
+KORMANY=$(curl -S "https://koronavirus.gov.hu" 2>/dev/null)
 
 Fpest=$(echo "$KORMANY" | grep 'api-fertozott-pest">' | cut -d '>' -f 2- | cut -d '<' -f 1| sed 's/ //g')
 Fvid=$(echo "$KORMANY" | grep 'api-fertozott-videk">' | cut -d '>' -f 2- | cut -d '<' -f 1 | sed 's/ //g')
@@ -37,6 +38,8 @@ Epest=$(echo "$KORMANY" | grep 'api-elhunyt-pest">' | cut -d '>' -f 2- | cut -d 
 Evid=$(echo "$KORMANY" | grep 'api-elhunyt-videk">' | cut -d '>' -f 2- | cut -d '<' -f 1 | sed 's/ //g')
 
 Sampl=$(echo "$KORMANY" | grep 'api-mintavetel">' | cut -d '>' -f 2- | cut -d '<' -f 1 | sed 's/ //g')
+
+Date=$(echo "$KORMANY" | grep '<p>Legutolsó frissítés dátuma: ' | cut -c 36-52 | head -1)
 
 F=$(($Fpest + $Fvid))
 Gy=$(($GYpest + $GYvid))
@@ -53,4 +56,4 @@ else
    calc_change
 fi
 
-[[ -z "${BLOCK_BUTTON}" ]] || notify-send -i gnome-info -a 'covid' "Koronamonitor" "Aktív: $F ($DF)\nGyógyult: $Gy ($DGy)\nElhunyt: $E ($DE)\nMinta: $Sampl ($DSampl)"
+[[ -z "${BLOCK_BUTTON}" ]] || notify-send -i ~/.config/i3blocks/covid.png -a 'covid' "Koronamonitor" "$Date\nAktív: $F ($DF)\nGyógyult: $Gy ($DGy)\nElhunyt: $E ($DE)\nMinta: $Sampl ($DSampl)"

@@ -7,7 +7,7 @@ if [ "$@" ]
 then
 	case $@ in
 		*Lock)
-			betterlockscreen -l blur
+			~/.config/lock.sh
 			;;
 		*Logout)
 			i3-msg exit

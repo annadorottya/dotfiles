@@ -27,6 +27,8 @@ SUBSCRIBE=${SUBSCRIBE:-0}
 
 MIXER=${MIXER:-""}
 SCONTROL=${SCONTROL:-""}
+MSGID="991049"
+
 
 while getopts F:Sf:adH:M:L:X:T:t:C:c:i:m:s:h opt; do
     case "$opt" in
@@ -115,18 +117,24 @@ esac
 
 function print_format {
     echo "$1" | envsubst '${SYMB}${VOL}${INDEX}${NAME}'
+    if [[ $MUTED =~ "no" ]] ; then
+        dunstify -a "changeVolume" -u low -r "$MSGID" "${DESC}" " ${SYMB} $(~/.config/buildbar.sh 5 $VOL false)"
+    else
+        dunstify -a "changeVolume" -u low -r "$MSGID" "${DESC}" " ${SYMB} $(~/.config/buildbar.sh 5 $VOL true)"
+    fi
 }
 
 function print_block {
-    ACTIVE=$(pacmd list-sinks | grep "state\: RUNNING" -B4 -A7 | grep "index:\|name:\|volume: front\|muted:")
-    [ -z "$ACTIVE" ] && ACTIVE=$(pacmd list-sinks | grep "index:\|name:\|volume: front\|muted:" | grep -A3 '*')
-    for name in INDEX NAME VOL MUTED; do
+    ACTIVE=$(pacmd list-sinks | grep "index:\|name:\|volume: front\|muted:\|device\.description =\|device\.icon_name =" | grep -A5 '*')
+    for name in INDEX NAME VOL MUTED DESC ICON; do
         read $name
     done < <(echo "$ACTIVE")
     INDEX=$(echo "$INDEX" | grep -o '[0-9]\+')
-    VOL=$(echo "$VOL" | grep -o "[0-9]*%" | head -1 )
+    VOL=$(echo "$VOL" | grep -o "[0-9]*%" | head -1)
     VOL="${VOL%?}"
-
+    MUTED=$(echo "$MUTED" | cut -d' ' -f2)
+    DESC=$(echo "$DESC" | cut -d'"' -f2)
+    ICON=$(echo "$ICON" | cut -d'"' -f2)
     NAME=$(echo "$NAME" | sed \
 's/.*<.*\.\(.*\)>.*/\1/; t;'\
 's/.*<\(.*\)>.*/\1/; t;'\

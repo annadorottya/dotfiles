@@ -46,7 +46,7 @@
     # The height of the entire notification.  If the height is smaller
     # than the font height and padding combined, it will be raised
     # to the font height and padding.
-    notification_height = 100
+    notification_height = 30
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.
@@ -270,7 +270,7 @@
     # On the US keyboard layout "grave" is normally above TAB and left
     # of "1". Make sure this key actually exists on your keyboard layout,
     # e.g. check output of 'xmodmap -pke'
-    history = ctrl+grave
+    history = ctrl+shift+0
 
     # Context menu.
     context = ctrl+shift+period
@@ -414,3 +414,6 @@
 #    set_stack_tag = "volume"
 #
 # vim: ft=cfg
+
+[facebook]
+summary = "Facebook"

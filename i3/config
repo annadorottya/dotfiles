@@ -35,7 +35,7 @@ font pango:noto sans mono regular 10
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l blur --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/lock.sh --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -43,9 +43,12 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+1 i3blocks 
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+1 i3blocks 
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && pkill -RTMIN+1 i3blocks 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioPlay exec --no-startup-id playerctl -p spotify play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl -p spotify next
+bindsym XF86AudioPrev exec --no-startup-id playerctl -p spotify previous
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 && pkill -RTMIN+2 i3blocks # increase screen brightness
@@ -185,7 +188,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # i3lock
-bindsym $mod+Shift+x exec betterlockscreen -l blur
+bindsym $mod+Shift+x exec ~/.config/lock.sh
 
 # resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
@@ -249,7 +252,7 @@ smart_gaps on
 
 # startup stuff
 exec_always --no-startup-id feh --bg-fill /usr/share/backgrounds/blade-runner-2049-9-1920×1080.jpg
-exec --no-startup-id picom -f --config ~/.config/picom.conf --experimental-backends
+exec_always --no-startup-id picom -f --config ~/.config/picom.conf --experimental-backends
 exec --no-startup-id dunst
 exec --no-startup-id redshift-gtk
 exec --no-startup-id synclient VertScrollDelta=-77 HorizScrollDelta=-77 TapButton3=3 TapButton2=2 TapButton1=1 ClickFinger2=2 ClickFinger3=3 HorizTwoFingerScroll=1
